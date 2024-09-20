@@ -29,6 +29,7 @@ boxes.forEach((box) => {
     box.addEventListener("click" , () => {
         if (turnO){ //playerO
          box.innerText = "O" ;
+         box.style.color = "blue";
          turnO = false;
         }
         else{//playerX
@@ -47,7 +48,8 @@ boxes.forEach((box) => {
 });
 
 const gameDraw = () => {
-    msg.innerText = `Game Draw`;
+    msg.innerHTML = "<b>Game Draw</b>";
+    msg.style.color = "red";
     msgContainer.classList.remove("hide");
     disableBoxes();
 };
@@ -67,6 +69,7 @@ const enableBoxes = () => {
 
 const showWinner = (winner) =>{
     msg.innerText = `Congratulations, Winner is ${winner}`;
+    msg.style.color = "blue";
     msgContainer.classList.remove("hide");
     disableBoxes;
 };
